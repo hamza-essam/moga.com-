@@ -1,0 +1,142 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+       <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-family: system-ui, '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body{
+            background: linear-gradient(blue , red);
+            color: azure;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            height: 300px;
+            width: 350px;
+            border:3px solid azure ;
+            text-align: center;
+            padding: 100px;
+        }
+        #games{
+            background-color: #3838b35b;
+            border-top:3px solid azure ;
+            border-bottom: 3px solid azure;
+          
+        }
+        h1{
+            border: 6px  solid rgb(166, 231, 212);
+        }
+        p{
+            font-size: 20px;
+        }
+        #xo_game{
+         padding: 10px;
+         border-bottom:3px solid azure ;
+        }
+        #attacking_fish_game{
+            padding: 10px;
+            border-bottom:3px solid azure ;
+        }
+        #stopwatch{
+            margin-top:15px;
+        }
+        footer{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #3838b35b;
+        }
+        img:hover , span:hover{
+            rotate: 360deg;
+            transition:1s ;
+        }
+        .hide{
+            display: none;
+        }
+        .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 1000,
+    'GRAD' 200,
+    'opsz' 0   
+  }
+       </style>
+    </head>
+    <body>
+        <h3 id="title">offline</h3>
+   <ul>
+    Try:
+         <li>Checking the network cables, modem, and router</li><br>
+         <li> Reconnecting to Wi-Fi</li><br>
+         <li> Running Windows Network Diagnostics</li><br>
+         <li> ERR_INTERNET_DISCONNECTED</li>
+   </ul>
+          <br>
+        <div id="container">
+          <h1>mezo online games and activities</h1>
+
+
+          <div id="games">
+            <div id="xo_game"><a href="xo game.html"><img width="60px" src="https://tse1.mm.bing.net/th?id=OIP.6KKbMNXZCBj3riZ49HEnZgHaFj&pid=Api&P=0&h=220" alt=""></a><p>xo_game</p></div>
+
+            <div id="attacking_fish_game"><a href="game project/game-home.html"><img width="60px" src="https://tse1.mm.bing.net/th?id=OIP.-W3ln6zT_BqZ4ULd5KVkfwHaE6&pid=Api&P=0&h=220" alt=""></a><p>attacking_fish_game</p></div>
+
+            <div id="stopwatch"><a href="stopwatch.html"><span class="material-symbols-outlined">timer</span></a><p>stopwatch</p></div>
+          </div>
+
+
+          <footer>
+             <p>لا تنسى الاتصال بنا على 01026107781</p>
+          </footer>
+        </div>
+
+       
+
+        <script>
+            let title = document.getElementById('title');
+            let ul = document.querySelector('ul');
+            let container = document.getElementById('container');
+
+              window.onload = function(){
+                if(window.navigator.onLine){
+                    online();
+                }
+               else if(window.navigator.offline){
+                    offline();
+                }
+              } 
+
+
+              window.addEventListener('online',function(){
+                online();
+              });
+window.addEventListener('offline',function(){
+    offline();
+})
+
+
+
+            function online() {
+                title.innerHTML = 'online now';
+                title.style.color = 'green';
+                ul.classList.add('hide');
+            }
+
+            function offline() {
+                title.innerHTML = 'offline now';
+                title.style.color = 'red';
+                ul.classList.remove('hide');
+            }
+        </script>
+    </body>
+</html>
